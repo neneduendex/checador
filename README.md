@@ -1,0 +1,2 @@
+# checador
+Codigo estadias
