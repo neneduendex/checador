@@ -13,9 +13,14 @@ export default function Login(props){
                 <TextInput autoCapitalize='none' keyboardType='email-address' style={{height:40, color:'#000', borderWidth:2, borderRadius:10, borderStyle:'solid', textAlign:'center', borderColor:'#00ada9',marginTop:80, color:'white'}} placeholderTextColor='white' placeholder='Correo' selectionColor='#428AF8'/>
                 <TextInput secureTextEntry={true} autoCapitalize='none' style={{height:40, color:'#000', borderWidth:2, borderRadius:10, borderStyle:'solid', textAlign:'center', borderColor:'#00ada9', marginTop:20, color:'white'}} placeholderTextColor='white' placeholder='Contraseña' selectionColor='#428AF8' />
                 <TouchableOpacity 
-                onPress={() => props.navigation.replace('Principal')}
+                onPress={() => props.navigation.navigate('Principal')}
                 style = {[estilos.loginBtn, {alignItems: 'center', justifyContent: 'center'}]} >
                 <Text style={{fontSize: 20, color: '#FFF', fontWeight:'400'}}>Iniciar sesión</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                onPress={() => props.navigation.navigate('PrincipalEncargado')}
+                style = {[estilos.loginBtn, {alignItems: 'center', justifyContent: 'center'}]} >
+                <Text style={{fontSize: 20, color: '#FFF', fontWeight:'400'}}>Vision Encargado</Text>
                 </TouchableOpacity>
             </View>
             </View>
@@ -52,7 +57,7 @@ const estilos = new StyleSheet.create({
         height:40,
         marginTop: 40,
         margin:40,
-        backgroundColor: '#fe0000',
+        backgroundColor: '#ca2323',
         color: '#FFF',
         fontSize: 16,
         borderRadius: 10,

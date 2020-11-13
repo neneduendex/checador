@@ -1,25 +1,25 @@
 import React from 'react';
 import {Image, View, Text, ScrollView} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {FontAwesome5} from '@expo/vector-icons';
+import {FontAwesome5, MaterialIcons,Ionicons} from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
 import Cuenta from './cuenta';
-import Calendario from './calendario';
+import Relacionados from './relacionados';
 import Login from './login';
-import Checador from './checador';
+import Registro from './registrarRelacionado';
 
-export default function principal(props){
+export default function PrincipalEncargado(props){
     return(
         <Tab.Navigator
             screenOptions={({route}) => ({
                 tabBarIcon: ({color}) => {
                     let icono;
-                    if(route.name == 'Calendario'){
-                        icono = 'calendar';
-                    } else if(route.name == 'Checador'){
-                        icono = 'fingerprint';
+                    if(route.name == 'Relacionados'){
+                        icono = 'users';
+                    } else if(route.name == 'Registro'){
+                        icono = 'user-plus';
                     } else if(route.name == 'Cuenta'){
                         icono = 'user-alt';
                     }
@@ -37,14 +37,14 @@ export default function principal(props){
             }}
         >
             <Tab.Screen
-                name='Checador'
-                component={Checador}
-                options={{title: 'Checador'}}
+                name='Relacionados'
+                component={Relacionados}
+                options={{title: 'Relacionados'}}
             />
             <Tab.Screen
-                name='Calendario'
-                component={Calendario}
-                options={{title: 'Historial'}}
+                name='Registro'
+                component={Registro}
+                options={{title: 'Registro'}}
             />
             <Tab.Screen
                 name='Cuenta'

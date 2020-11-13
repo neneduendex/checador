@@ -6,20 +6,14 @@ export default function checador(props){
     return(
         <View style={estilos.safe}>
             <View style={{flex:1, justifyContent: 'space-around', flexDirection:'column'}}>
-            <View style={{flex:1, backgroundColor:'red', justifyContent:'center'}}>
-                <TouchableOpacity 
-                style = {{alignItems: 'center', justifyContent: 'center'}} >
-                {/*<Image source={require('../assets/logo-rimo.png')} />*/}
-                <Text style={{color:'white'}}>MARCAR ENTRADA</Text>
+                <TouchableOpacity style = {{alignItems: 'center', justifyContent: 'center'}} >
+                <Text style={{color:'white'}}><MaterialCommunityIcons name="fingerprint" size={200} color="#ffb200" /></Text>
+                <Text style={{color:'white'}}>Marcar Entrada</Text>
                 </TouchableOpacity>
-            </View>
-            <View style={{flex:1, backgroundColor:'blue',  justifyContent:'center'}}>  
-                <TouchableOpacity 
-                style = {{alignItems: 'center', justifyContent: 'center'}} >
-                 {/*<Image source={require('../assets/logo-rimo.png')} />*/}
-                 <Text style={{color:'white'}}>MARCAR SALIDA</Text>
+                <TouchableOpacity style = {{alignItems: 'center', justifyContent: 'center'}} >
+                <Text style={{color:'white'}}><MaterialCommunityIcons name="fingerprint-off" size={200} color="#ca2323" /></Text>
+                <Text style={{color:'white'}}>Marcar Salida</Text>
                 </TouchableOpacity>
-            </View>
             </View>
         </View>
     );

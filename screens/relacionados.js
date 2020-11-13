@@ -1,10 +1,11 @@
 import React from 'react';
-import {Image, View, Text, ScrollView, StyleSheet} from 'react-native';
+import {Image, View, Text, ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
+import {MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 
-export default function calendario(props){
+export default function relacionados(props){
     return(
         <ScrollView style={estilos.safe}>
-            <Text style={{color:'white'}}>Calendario</Text>
+            <Text style={{color:'white'}}>Listado de alumnos o empleado</Text>
         </ScrollView>
     );
 }

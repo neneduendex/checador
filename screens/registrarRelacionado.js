@@ -1,46 +1,47 @@
 import React from 'react';
-import {Image, View, Text, ScrollView, StyleSheet, TouchableOpacity, Alert} from 'react-native';
+import {Image, View, Text, ScrollView, StyleSheet, TouchableOpacity, TextInput, Alert} from 'react-native';
 import {MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 
-export default function cuenta(props){
+export default function registrarRelacionado(props){
     return(
+        <View style={{flex:1, backgroundColor: '#000'}}>
         <ScrollView style={estilos.safe}>
+        <TouchableOpacity>
         <View style={[estilos.view, {backgroundColor:"#000", justifyContent: "space-evenly", borderBottomEndRadius: 18, borderBottomStartRadius: 18}]}>
             <Image style={estilos.img} source={require('../assets/logo-rimo.png')} />
-            <Text style={{fontSize: 20, color:"#FFF", margin: 15}}>Nombre</Text>
         </View>
+        </TouchableOpacity>
         <View style={{flex: 2, justifyContent: "space-evenly", backgroundColor: '#000'}}>
-            <Text style={[estilos.texto, {fontSize: 15}]}><MaterialIcons name="email" size={13}/>&nbsp;Correo</Text>
-            <Text style={[estilos.texto, {fontSize: 15}]}><MaterialIcons name="location-city" size={13}/>&nbsp;Estado</Text>
-            <Text style={[estilos.texto, {fontSize: 15}]}><MaterialIcons name="location-city" size={13}/>&nbsp;CP</Text>
+            <TextInput autoCapitalize='none' keyboardType='default' placeholderTextColor='white' placeholder='Nombre' selectionColor='#428AF8' style={[estilos.texto, {fontSize: 15}]}></TextInput>
+            <TextInput autoCapitalize='none' keyboardType='email-address' placeholderTextColor='white' placeholder='Correo' selectionColor='#428AF8' style={[estilos.texto, {fontSize: 15}]}></TextInput>
+            <TextInput autoCapitalize='none' keyboardType='ascii-capable' placeholderTextColor='white' placeholder='Contraseña' secureTextEntry={true} selectionColor='#428AF8' style={[estilos.texto, {fontSize: 15}]}></TextInput>
+            <TextInput autoCapitalize='none' keyboardType='number-pad' placeholderTextColor='white' placeholder='IMEI' selectionColor='#428AF8' style={[estilos.texto, {fontSize: 15}]}></TextInput>
         </View>
         <View style={{justifyContent:'center', flexDirection: 'row'}}>
             <TouchableOpacity 
             onPress = {() => {
                 Alert.alert(
-                '¿Confirmar?',
-                '¿Esta seguro de cerrar sesion?',
+                'Confirmar registro',
+                '¿La informacion es correcta?',
                 [
                     {
-                    text: 'Cancelar',
+                    text: 'No',
                     onPress : () => { }
                     },
                     {
-                    text: 'Estoy seguro',
-                    onPress : () => { 
-                        SecureStore.deleteItemAsync('id')
-                        SecureStore.deleteItemAsync('correo');
-                        props.navigation.replace('Login') }
+                    text: 'Si',
+                    onPress : () => { }
                     }
                 ],
                 {cancelable : true}
                 );
             }}
             style = {[estilos.touch ,{borderColor:'#ca2323' ,backgroundColor: '#ca2323'}]}>
-                <Text style={{fontSize: 15, color: 'white'}}><MaterialCommunityIcons name="logout" size={13}/>&nbsp;Cerrar Sesión</Text>
+                <Text style={{fontSize: 15, color: 'white'}}><MaterialCommunityIcons name="account-multiple-check" size={15}/>&nbsp;Registrar Asociado</Text>
             </TouchableOpacity>
         </View>
     </ScrollView>
+    </View>
     );
 }
 
